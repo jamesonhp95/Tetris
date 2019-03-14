@@ -1,0 +1,41 @@
+﻿<Window x:Class="Tetris.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tetris"
+        mc:Ignorable="d"
+        Title="Tetris Mania" Height="720" Width="650" ResizeMode="NoResize" Icon="TetrisManiaLogo.ico">
+    <Grid>
+        <Menu x:Name="mainMenu" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="873" Grid.ColumnSpan="2">
+            <MenuItem x:Name="mnuFile" HorizontalContentAlignment="Center" VerticalAlignment="Center" Header="_File" Height="45" Width="96" FontSize="14">
+                <MenuItem x:Name="mnuFileNewClassic" Header="_Classic" HorizontalAlignment="Left" Height="45" Width="140" Click="mnuFileClassic_Click"/>
+                <MenuItem x:Name="mnuFileNewGravity" Header="_Cascade" HorizontalAlignment="Left" Height="45" Width="140" Click="mnuFileCascade_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="mnuHelp" Header="_Help">
+                <MenuItem x:Name="mnuHelpAbout" Header="_About" HorizontalAlignment="Left" Height="53" Width="139" Click="mnuHelpAbout_Click"/>
+                <MenuItem x:Name="mnuHelpDetails" Header="_Details" HorizontalAlignment="Left" Height="53" Width="139" Click="mnuHelpDetails_Click"/>
+            </MenuItem>
+        </Menu>
+        <!--Archived use for 3D intro screen
+        <Canvas Name="displayGame" Width="624" Height="580" Opacity="1" Margin="10,111,10,0" Panel.ZIndex="2"/>
+        <Canvas Name="gradient" Opacity=".6" Margin="0,109,0,0" Panel.ZIndex="1">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+                    <GradientStop x:Name ="startColor" Color="#0000FF" Offset="0"/>
+                    <GradientStop Color="#ADD8E6" Offset="0.567"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas> 
+        -->
+        <Image Source="H:\Tetris\Tetris\TetrisLongLogo.png" Height="580" Margin="0,111,321,0"></Image>
+        <Button Content="Classic" HorizontalAlignment="Left" Margin="23,55,0,0" VerticalAlignment="Top" Width="85" Click="Button_Click"/>
+        <Button Content="Cascade" HorizontalAlignment="Left" Margin="23,80,0,0" VerticalAlignment="Top" Width="85" Click="Button_Click_1"/>
+        <Label Content="Classic - After completing rows, blocks above the row shift down that amount of rows." HorizontalAlignment="Left" Margin="113,52,0,0" VerticalAlignment="Top" Width="521"/>
+        <Label Content="Cascade - After completing rows, blocks above the row shift down realistically to gravity." HorizontalAlignment="Left" Margin="113,78,0,0" VerticalAlignment="Top" Width="521"/>
+        <Label Content="Player Name: " HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" Width="85"/>
+        <TextBox x:Name ="pName" HorizontalAlignment="Left" Height="23" Margin="108,33,0,0" TextWrapping="Wrap" Opacity=".5" Text="Type your name here. If left blank, defaults to Anonymous!" VerticalAlignment="Top" Width="511" IsKeyboardFocusedChanged="pName_IsKeyboardFocusedChanged"/>
+        <Label x:Name="label" Content="Controls:&#xD;&#xA;&#xD;&#xA;Left/Right arrow keys move left and&#xD;&#xA;right respectively.&#xD;&#xA;&#xD;&#xA;Up/Down arrow keys pivot the falling&#xD;&#xA;pattern counterclockwise and &#xD;&#xA;clockwise respectively.&#xD;&#xA;&#xD;&#xA;Space bar drops the block.&#xD;&#xA;&#xD;&#xA;CTRL+P or P - Pause game&#xD;&#xA;CTRL+G or G - Resume game&#xD;&#xA;CTRL+X or X - Exit game&#xD;&#xA;R - Replay game after losing&#xD;&#xA;&#xD;&#xA;CTRL+S - Save game&#xD;&#xA;CTRL+L - Load game&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Secret: Click the Tetris Mania logo&#xD;&#xA;for chaotic fun!!&#xD;&#xA;(Increases level in real game based&#xD;&#xA;on amount of times clicked)" HorizontalAlignment="Left" Margin="375,144,0,0" VerticalAlignment="Top" Height="466" Width="219"/>
+        <Button x:Name="LogoLevelUp" Content="" Opacity="0" HorizontalAlignment="Left" Margin="74,319,0,0" VerticalAlignment="Top" Width="159" Height="66" Click="LogoLevelUp_Click" Panel.ZIndex="100"/>
+    </Grid>
+</Window>
